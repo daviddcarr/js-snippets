@@ -37,7 +37,7 @@ function squareGeofence(lat1, lat2, lon1, lon2) {
     }
 }
 
-//Function checks to see if current position is within range of latitude and longitude coordinates passed to it. Distance is based on degrees
+//Function checks to see if current position is within a certain distance(km) of latitude and longitude coordinates passed to it. 
 function radialGeofence(lat,lon, distance) {
     //Check to see if browser supports geolocation
     if (navigator.geolocation) {
