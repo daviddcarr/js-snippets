@@ -50,3 +50,43 @@ function getHours(h1,m1,s1,h2,m2,s2) {
 
     return time;
 }
+
+//Convert seconds to {hours,minutes,seconds}
+function simplifyTime(s) {
+    if (s > 3600) {
+        var hours = Math.floor(s / 3600);
+        if((s % 3600) > 60) {
+            var minutes = Math.floor((s - (hours * 3600)) / 60),
+                seconds = s % 60;
+        } else {
+            var minutes = 0,
+                seconds = s % 3600;
+        }
+    } else if (s > 60) {
+        var hours = 0,
+            minutes = Math.floor(s / 60),
+            seconds = s % 60;
+    } else {
+        var hours = 0,
+            minutes = 0,
+            seconds = s;
+    }
+    
+    return {hours:hours, minutes:minutes, seconds:seconds};
+}
+
+//Returns a string in standard time format "01:23:45"
+function stringTime(h,m,s) {
+    if(m < 10) {
+        var min = "0" + m;
+    } else {
+        var min = m;
+    }
+    if(s < 10) {
+        var sec = "0" + s;
+    } else {
+        var sec = s;
+    }
+    
+    return h + ":" + min + ":" + sec;
+}
