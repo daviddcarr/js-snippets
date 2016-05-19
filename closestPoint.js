@@ -12,7 +12,8 @@ function pointDist(array, mouseX, mouseY) { //array is 2 dimensional, each value
             value[1] = i;
         }
     }
-    return value; //value is an array containing the closest distance and its index from "array" [distance, index]
+    //value is an array containing the closest distance and its index from "array" [distance, index]
+    return value; 
 }
 
 //Calculates Distance between two cartesian points using Pythagorean theorem.
